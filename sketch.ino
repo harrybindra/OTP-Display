@@ -76,18 +76,19 @@ String responsoflest = client.readString();
  Serial.println("-------------------------------");
 Serial.println(responsoflest);
 Serial.println("-------------------------------");
-responsoflest.remove(0,responsoflest.indexOf("Code: ")+6);
+responsoflest.remove(0,responsoflest.indexOf("Code: ")+6); //depending on your email you may have to change this part  
  Serial.println("-------------------------------");
 Serial.println(responsoflest);
 Serial.println("-------------------------------");
-responsoflest.remove(responsoflest.indexOf(" If"));
+responsoflest.remove(responsoflest.indexOf(" If")); //depending on your email you may have to change this part  
  Serial.println("-------------------------------");
 Serial.println(responsoflest);
 Serial.println("-------------------------------");
 return responsoflest;
 }
 void setup() {
-wifi.begin("Viu_A7E39D","x670etuf");
+ //connecting to wifi 
+ wifi.begin("SSID","PASS");
 Serial.begin(9600);
 while (wifi.status() != WL_CONNECTED)
 {
@@ -96,7 +97,7 @@ delay(500);
 }
 Serial.print(wifi.localIP());
 pinMode(14,INPUT);
-
+//Setting up display
 display.begin(SSD1306_SWITCHCAPVCC, 0x3c)) 
   client.setInsecure();
     display.clearDisplay();
@@ -121,13 +122,14 @@ display.display();
 
 double timeittakestodoonesycle = 0;
 
-
+int tm =1;
 void loop() {
   
   Serial.println("-------------------------------------------------------------------------------------------------------------------------------------");
 
-
-if (timeittakestodoonesycle/1000 >= 3600)
+//This if statement is to refresh access token 
+//well you can remove this refresh access token after 60min you can refresh it every time the loop start but it's going to make everything slow 
+if (timeittakestodoonesycle/1000 >= (3600*tm))
 {
   display.clearDisplay();
 display.setTextSize(1);
@@ -153,7 +155,7 @@ display.setTextColor(WHITE);
 display.setCursor(28,28);
 display.println(resuletnum);
 display.display();
-
+tm += 1;
 }
 if(digitalRead(14) == HIGH){
   String carantleast = leastid;
