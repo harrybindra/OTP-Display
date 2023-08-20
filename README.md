@@ -9,9 +9,9 @@ Here we are retrieving otps that from Gmail so you would have to use Gmail API. 
 2: Get Refresh token: you have to go to https://developers.google.com/oauthplayground/ to get the Refresh token (we do not need an access token not right know <b>*just Refresh token</b>). 
 
 <h3>Requerments: </h3>
-Esp8266,
+Esp8266 12e,
 <a href="https://amzn.eu/d/3bl9i0p">Display</a>,You have to label your otp email. 
 
 <h1>Sketch explaned:</h1>
-
-String refreshgoogletoken(){}
+<h3>refreshgoogletoken() : </h3><h4> this function is used to refres/Get access token for Gmail api requests.</h4>
+<h3>refreshgoogletoken() : </h3>
