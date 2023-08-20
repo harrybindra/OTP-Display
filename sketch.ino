@@ -10,8 +10,8 @@ refresh_token ; //{your refresh_token. ok to get refresh_token you have to use "
 String client_id ; //{your client_id}
 String client_secret; //{client_secret}
  String access_token_d_o; //{access_token}
-  String leastid;//email id
-  String  resuletnum;
+  String leastid;//{email id}
+  String  resuletnum; //{otp}
 ESP8266WiFiClass wifi;
 Adafruit_SSD1306  display(128,64,&Wire,-1);
 
