@@ -12,7 +12,7 @@ Here we are retrieving otps that from Gmail so you would have to use Gmail API. 
 Esp8266 12e,
 <a href="https://amzn.eu/d/3bl9i0p">Display</a>,You have to label your otp email. 
 
-<h1>Sketch explaned:</h1>
-<h3>refreshgoogletoken() : </h3> <h4> This function is used to refres/Get access token for Gmail api requests.</h4>
+<h1>Main functions explained:</h1>
+<h3>refreshgoogletoken() : </h3> <h4> This function is used to refresh/Get access token for Gmail API requests.</h4>
 <h3>getlestdata() : </h3> <h4> This function is used to Get email id (id: every email has a special number called id not email id).</h4>
 <h3>gmaildata() : </h3> <h4> This function is used to Get email with the id we got from getlestdata().</h4>
